@@ -1,0 +1,23 @@
+---
+title: "Assignment 1"
+author: "Raul Bassi"
+date: "10/03/2020"
+output: pdf_document
+---
+
+# Assignment 1
+
+I am supposed to write some paragraphs to see how this would look as a PDF document.
+
+The hardest part of this homework was downloading LaTex, because there is no button that lead to a download in their web page.
+
+I hope this works.
+
+I suppose I have added enough paragraphs for today.
+
+```{r pressure, echo=FALSE}
+a <- seq(1:10)
+b <- a*a
+plot(a, b)
+```
+
