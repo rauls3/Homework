@@ -1,0 +1,270 @@
+---
+title: "Homework 2"
+author: "Raul Bassi"
+date: "17/03/2020"
+output: pdf_document
+---
+
+#Homework 2
+(now done at home fr)
+
+##BASIC R OPERATIONS
+
+1.1)
+
+```{r}
+6 + 25
+sqrt(sqrt(81) + sqrt(100))
+54*645 - 1000/ 46
+```
+
+The computation is easy, I only chose whatever number and typed different combinations such as "6 + 25", "sqrt(sqrt(81) + sqrt(100))" and 54*645 - 1000/46". I am not able to explain why I did this way because i just randomly decided what i was gonna write.
+
+```{r}
+install.packages("devtools")
+library(devtools)
+install_github("tidyverse/ggplot2")
+library(tidyverse)
+help("separate")
+```
+
+I did not know if I was supposed to write the steps from 1.2 to 1.4 here so I wrote it anyway.
+
+Just looked in Stackoverflow and found out how to create a pie chart!!!
+
+library(ggplot2)
+ggplot(df1, aes(x = 1, y = count, fill = berth_day))+
+    geom_col(position = 'stack', 
+             show.legend = F) +
+    geom_text(aes(label = paste(berth_day, ': ', count)), 
+               position = position_stack(vjust = .5)) +
+    coord_polar(theta = "y") +
+    theme_void()
+
+Not gonna lie, I do not know what many of those things do but you said for me to find out so...
+
+```{r}
+apropos("test")
+```
+
+51, that is the year Palmeiras won their World championship!!
+
+
+1.7) https://pt.stackoverflow.com/questions/260185/como-mudar-o-tipo-de-letra-em-um-gr%C3%A1fico-no-r
+
+The question is about changing the font style in a plot using ggplot2. The answer says to add after ggplot, geom_"something" and labs, theme(plot.title = element_text(family = "selected font-style"))
+
+1.8) If i were to install "my_package", I would use the function: install.packages("my_package") and to view it: library(my_package)
+
+1.9) To understand how to use "my_function" I would type  help("my_function") in R. Outside R I would just use Stackoverflow.
+
+1.10)
+```{r}
+vectorA <- c(1, 2, 3)
+```
+
+It creates a vector and classifies it as "num" in values session.
+
+1.11)
+```{r}
+vectorB <- c('1','2','3')
+```
+It creates another vector and classifies it as "chr" in values session.
+
+1.12)
+```{r}
+x <- c(1,2,3)
+y <- c('1','2','3')
+c(x,y)
+```
+
+When we combine, we combine. c(x,y) just combine both vectors into a single one
+
+```{r}
+mtcars
+mean(mtcars$mpg)
+median(mtcars$mpg)
+```
+Summarizing the median of the mpg in the data set is 19.2, while the mean is 20.09
+
+
+1.14) Table
+
+```{r}
+table(mtcars$mpg)
+```
+
+1.15) All the articles expose mistakes in graphs. They could be bad lebeling the axes, lack of data, bad comparisons, pie charts that sum is more than 100% and many others.
+
+1.16)
+• The chance that it will rain tomorrow. (continuous quantitative)
+• Numbers of cars that travel, in one day, on the busiest avenue in the city. (discrete quantitative)
+• Customer satisfaction with the service: excellent, good, regular, bad, or very bad. (ordinal qualitative)
+• Blood type. (nominal qualitative)
+• Email of Company X customers. (nominal qualitative)
+• Time of professional experience of employees of Company X, in years. (continuous quantitative)
+• Time of professional experience of employees of Company X, in seconds. (discrete quantitative)
+• Professional experience of Company X employees: high experience, medium experience, or low experience. (ordinal qualitative)
+• Gender of the interviewee. (nominal qualitative)
+• HDI of the countries. (continuous quantitative)
+• The inflation rate for the year. (continuous quantitative)
+
+
+## FIX THE CODE
+
+2.1)
+```{r}
+2 + 2
+```
+without the "".
+
+2.2)
+```{r}
+2 + pi
+```
+without the ""(again).
+
+2.3)
+```{r}
+A = TRUE
+```
+Numbers cannot be TRUE or FALSE.
+
+2.4)
+```{r}
+4/3
+```
+the bar is / not \.
+
+2.5)
+```{r}
+help("cor.test")
+```
+CAPITAL LETTERS make a difference in R, and use "" in function help.
+
+2.6)
+```{r}
+?cor.test
+```
+one ? does the work!!
+
+2.7)
+```{r}
+help("if")
+```
+function help needs "" inside the ()
+
+2.8)
+```{r}
+help("cor.test")
+```
+or help or ?, do not be indecise
+
+2.9)
+```{r}
+#this is my sum
+1 + 2
+```
+'#' to create a title not to make a sum.
+
+2.10)
+```{r}
+numbers <- c(1, 2, 3, 4)
+```
+comma is necessary inbetween terms.
+
+2.11)
+```{r}
+animals <- c("dog", "cat", "parrot", "bunny")
+```
+COMMA!!!!!!!!!!!!!!
+
+2.12)
+```{r}
+animals <- C("dog", "cat", "parrot", "bunny")
+```
+CAPITAL LETTERS make a difference!!!!!!!!!!!!!!
+
+2.13)
+```{r}
+head(mtcars)
+```
+I am tired of correcting typos of CAPITAL LETTERS.
+
+2.14)
+```{r}
+str(mtcars)
+```
+I won't say again.
+
+2.15)
+```{r}
+dim(mtcars)
+```
+Use () in this case, not []
+
+2.16)
+```{r}
+names(mtcars)
+```
+names not nomes.
+
+2.17)
+```{r}
+head(mtcars, n =10)
+```
+n instead of x
+
+2.18)
+```{r}
+animals <- c("dog", "cat", "parrot", "bunny")
+numbers <- c(1,2,3,4)
+dat <- data.frame(animals,numbers)
+```
+4 variables, then 4 numbers.
+
+2.19)
+```{r}
+dat <- c(1:100)
+save(dat, file = "my_data.RData")
+```
+First the data, then the file.
+
+2.20)
+```{r}
+data("diamonds")
+ggplot(data = diamonds) +
+geom_bar(mapping = aes(x = cut))
+```
+data have to have the data name written and aes function goes along with mapping in the geom_bar.
+
+2.21)
+```{r}
+data("diamonds")
+ggplot(data = diamonds) +
+geom_bar(mapping = aes(y = cut))
+```
+geom_bar can only have one variable axis, or x or y.
+
+2.22)
+```{r}
+p1 <- ggplot(data = diamonds) +
+geom_bar(mapping = aes(x = cut))
+p1 + theme_bw()
+```
+The theme needs to go after the plot code.
+
+2.23)
+```{r}
+ggplot(data = diamonds) +
+geom_bar(mapping = aes(x = cut), color = "red")
+```
+At this point I am tired of pointing the errors, but here is the parenthesis location.
+
+##CHALLENGE
+3.1)
+```{r}
+vr <- c(1:1000000)
+Evr <- vr[lapply(x,"%%",2) == 0]
+```
+
